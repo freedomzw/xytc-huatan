@@ -20,9 +20,9 @@
     <version>1.0-SNAPSHOT</version>
 
     <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <maven.compiler.source>1.8</maven.compiler.source>
-        <maven.compiler.target>1.8</maven.compiler.target>
+        <!--<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>-->
+        <!--<maven.compiler.source>1.8</maven.compiler.source>-->
+        <!--<maven.compiler.target>1.8</maven.compiler.target>-->
         <!--集中定义依赖的版本号-->
         <mysql.version>8.0.17</mysql.version>
         <jackson.version>2.9.0</jackson.version>
@@ -71,11 +71,9 @@
             <version>4.12</version>
             <scope>test</scope>
         </dependency>
-
-
     </dependencies>
 
-
+    <!--dependencyManagement 相当于一个maven管理 对于子maven进行坐标管理 子maven不需要在定义version版本这个标识-->
     <dependencyManagement>
         <dependencies>
             <!-- mybatis-plus插件依赖 -->
@@ -199,11 +197,26 @@
                     </exclusion>
                 </exclusions>
             </dependency>
-
-
         </dependencies>
     </dependencyManagement>
+    <!--dependencyManagement  end-->
 
+    <!--本地发布私服的配置管理nexus start-->
+    <distributionManagement>
+        <!--配置nexus release仓库-->
+        <repository>
+            <id>xytc-release</id>
+            <url>http://127.0.0.1:8081/repository/xytc-release/</url>
+        </repository>
+        <!--配置nexus snapshot仓库-->
+        <snapshotRepository>
+            <id>xytc-snapshot</id>
+            <url>http://127.0.0.1:8081/repository/xytc-snapshot/</url>
+        </snapshotRepository>
+    </distributionManagement>
+    <!--本地发布私服的配置到nexus end-->
+
+    <!--插件-->
     <build>
         <plugins>
             <!-- java编译插件 -->

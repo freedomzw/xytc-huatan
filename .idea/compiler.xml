@@ -15,7 +15,7 @@
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="my-tanhua-sso" options="-parameters" />
       <module name="tanhua" options="-parameters" />
-      <module name="xytc-huatan" options="" />
+      <module name="xytc-huatan" options="-parameters" />
     </option>
   </component>
 </project>
