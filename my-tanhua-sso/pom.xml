@@ -11,7 +11,6 @@
 
     <artifactId>my-tanhua-sso</artifactId>
 
-
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -83,6 +82,8 @@
     </dependencies>
 
     <!--本地发布私服的配置管理nexus start-->
+    <!--启动命令nexus start 地址:127.0.0.1:8081 admin/admin-->
+    <!--启动命令mvn deploy-->
     <distributionManagement>
         <!--配置nexus release仓库-->
         <repository>

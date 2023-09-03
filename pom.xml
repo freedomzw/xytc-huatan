@@ -19,11 +19,8 @@
     <artifactId>my-tanhua</artifactId>
     <version>1.0-SNAPSHOT</version>
 
+    <!--集中定义依赖的版本号-->
     <properties>
-        <!--<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>-->
-        <!--<maven.compiler.source>1.8</maven.compiler.source>-->
-        <!--<maven.compiler.target>1.8</maven.compiler.target>-->
-        <!--集中定义依赖的版本号-->
         <mysql.version>8.0.17</mysql.version>
         <jackson.version>2.9.0</jackson.version>
         <druid.version>1.0.9</druid.version>
@@ -93,6 +90,7 @@
                 <artifactId>mysql-connector-java</artifactId>
                 <version>${mysql.version}</version>
             </dependency>
+            <!--mongodb 驱动包-->
             <dependency>
                 <groupId>org.mongodb</groupId>
                 <artifactId>mongodb-driver-sync</artifactId>
@@ -104,6 +102,7 @@
                 <optional>true</optional>
                 <version>${lombok.version}</version>
             </dependency>
+
             <dependency>
                 <groupId>org.apache.commons</groupId>
                 <artifactId>commons-lang3</artifactId>
