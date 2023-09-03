@@ -18,3 +18,13 @@ docker rmi localhost:5000/myhellodocker:latest
 docker pull localhost:5000/myhellodocker
 #查看私服的镜像
 http://localhost:5000/v2/myhellodocker/tags/list
+
+#查看配置容器卷
+#创建启动c3数据卷容器 使用-v参数设置数据卷
+docker run -ti --name=c3 -v /volume centos:7 /bin/bash
+#创建启动c1 c2容器 使用--volumes-from 参数设置数据卷
+docker run -ti --name=c1 --volumes-from c3 centos:7 /bin/bash
+docker run -ti --name=c2 --volumes-from c3 centos:7 /bin/bash
+
+
+
